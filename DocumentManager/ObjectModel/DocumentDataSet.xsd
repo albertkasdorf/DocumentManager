@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DocumentDataSet" targetNamespace="http://tempuri.org/DocumentDataSet.xsd" xmlns:mstns="http://tempuri.org/DocumentDataSet.xsd" xmlns="http://tempuri.org/DocumentDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DocumentDataSet" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:Locale="en-US" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DocumentDataSet" msprop:Generator_UserDSName="DocumentDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Organisation" msdata:CaseSensitive="True" msprop:Generator_TableClassName="OrganisationDataTable" msprop:Generator_TableVarName="tableOrganisation" msprop:Generator_TablePropName="Organisation" msprop:Generator_RowDeletingName="OrganisationRowDeleting" msprop:Generator_RowChangingName="OrganisationRowChanging" msprop:Generator_RowEvHandlerName="OrganisationRowChangeEventHandler" msprop:Generator_RowDeletedName="OrganisationRowDeleted" msprop:Generator_UserTableName="Organisation" msprop:Generator_RowChangedName="OrganisationRowChanged" msprop:Generator_RowEvArgName="OrganisationRowChangeEvent" msprop:Generator_RowClassName="OrganisationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Document" msdata:CaseSensitive="True" msprop:Generator_TableClassName="DocumentDataTable" msprop:Generator_TableVarName="tableDocument" msprop:Generator_TablePropName="Document" msprop:Generator_RowDeletingName="DocumentRowDeleting" msprop:Generator_RowChangingName="DocumentRowChanging" msprop:Generator_RowEvHandlerName="DocumentRowChangeEventHandler" msprop:Generator_RowDeletedName="DocumentRowDeleted" msprop:Generator_UserTableName="Document" msprop:Generator_RowChangedName="DocumentRowChanged" msprop:Generator_RowEvArgName="DocumentRowChangeEvent" msprop:Generator_RowClassName="DocumentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" type="xs:string" />
+              <xs:element name="FileName" msprop:Generator_ColumnVarNameInTable="columnFileName" msprop:Generator_ColumnPropNameInRow="FileName" msprop:Generator_ColumnPropNameInTable="FileNameColumn" msprop:Generator_UserColumnName="FileName" type="xs:string" />
+              <xs:element name="Organisation" msprop:Generator_ColumnVarNameInTable="columnOrganisation" msprop:Generator_ColumnPropNameInRow="Organisation" msprop:Generator_ColumnPropNameInTable="OrganisationColumn" msprop:Generator_UserColumnName="Organisation" type="xs:int" />
+              <xs:element name="FileExtension" msprop:Generator_ColumnVarNameInTable="columnFileExtension" msprop:Generator_ColumnPropNameInRow="FileExtension" msprop:Generator_ColumnPropNameInTable="FileExtensionColumn" msprop:Generator_UserColumnName="FileExtension" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Organisation" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Organisation" />
+      <xs:field xpath="mstns:Name" />
+    </xs:unique>
+    <xs:unique name="Document_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Document" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="OrganisationID_DocumentOrganisation" msdata:parent="Organisation" msdata:child="Document" msdata:parentkey="ID" msdata:childkey="Organisation" msprop:Generator_UserChildTable="Document" msprop:Generator_ChildPropName="GetDocumentRows" msprop:Generator_UserRelationName="OrganisationID_DocumentOrganisation" msprop:Generator_ParentPropName="OrganisationRow" msprop:Generator_RelationVarName="relationOrganisationID_DocumentOrganisation" msprop:Generator_UserParentTable="Organisation" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
